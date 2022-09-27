@@ -10,12 +10,15 @@
 <body>
     <h1>Skills</h1>
     <ul>
-        <li>Some skill here</li>
-        <li>Some skill here</li>
-        <li>Some skill here</li>
-        <li>Some skill here</li>
-        <li>Some skill here</li>
-        <li>Some skill here</li>
-    </ul>
+        <% skills.forEach(function(skill) { %>
+          <li>
+            <a href="/skills/<%= skill.skillName %>">
+                <%= skill.skillName %>
+            </a>
+             used in 
+            <%= skill.project %>
+          </li>
+        <% }); %>
+      </ul>
 </body>
 </html>
