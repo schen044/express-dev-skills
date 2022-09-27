@@ -1,16 +1,17 @@
 // skills array
 const skills = [
-    {skillName: 'some name', project: 'some project'},
-    {skillName: 'name', project: 'project'},
-    {skillName: 'some', project: 'some'}
-]
+    {skillName: 'HTML', project: 'Minesweeper'},
+    {skillName: 'CSS', project: 'Minesweeper'},
+    {skillName: 'Javascript', project: 'Minesweeper'},
+    {skillName: 'Express', project: 'Express Lab'}
+];
 
 // exports
 module.exports = {
     getAll
-}
+};
 
 // functions
 function getAll () {
     return skills;
-}
+};
