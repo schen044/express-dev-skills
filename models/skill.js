@@ -8,10 +8,16 @@ const skills = [
 
 // exports
 module.exports = {
-    getAll
+    getAll,
+    getOne
 };
 
 // functions
 function getAll () {
     return skills;
 };
+
+function getOne(id) {
+    // using arry.find to find object
+    return skills.find(skills => skills.skillName === id);
+}

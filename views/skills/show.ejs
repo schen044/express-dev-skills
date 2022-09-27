@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <title><%= title %></title>
+</head>
+<body>
+    <h1><%= skills.skillName %></h1>
+    <% if(skills.project === 'Minesweeper') { %>
+        <a href="https://github.com/schen044/minesweeper">
+            <%= skills.project %>
+            github link
+        </a>
+    <% }; %>
+    <% if(skills.project === 'Express Lab') { %>
+        <a href="https://github.com/schen044/express-dev-skills">
+            <%= skills.project %>
+            github link
+        </a>
+    <% }; %>
+</body>
+</html>
