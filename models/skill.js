@@ -11,7 +11,8 @@ module.exports = {
     getAll,
     getOne,
     create,
-    deleteOne
+    deleteOne,
+    updateOne
 };
 
 // functions
@@ -34,5 +35,12 @@ function deleteOne(id) {
     // find index of skill object for deletion
     const idx = skills.findIndex(skill => skill.skillName === id);
     // remove at index
-    skills.splice(idx,1);
+    skills.splice(idx, 1);
+}
+
+function updateOne(id, skill) {
+    // get that one todo
+    skillToUpdate = getOne(id);
+    // update todo property to incoming data
+    skillToUpdate.skillName = skill;
 }

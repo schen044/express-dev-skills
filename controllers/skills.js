@@ -8,7 +8,8 @@ module.exports = {
     new: newSkill,
     create,
     delete: deleteSkill,
-    edit
+    edit,
+    update
 }
 
 // functions
@@ -21,7 +22,7 @@ function index(req, res) {
 
 function show(req, res) {
     res.render('skills/show', {
-        skills: Skill.getOne(req.params.id),
+        skill: Skill.getOne(req.params.id),
         title: 'Individual Skills List'
     });
 }
@@ -48,7 +49,17 @@ function deleteSkill(req, res) {
     res.redirect('/skills');
 }
 
-// edit post
+// render edit page
 function edit(req, res) {
-    res.render('skills/edit');
+    res.render('skills/edit', {
+        skill: Skill.getOne(req.params.id),
+        title: 'Editing Skill'
+    });
+}
+
+// edit skill
+function update(req, res) {
+    Skill.updateOne(req.params.id, req.body.skillName);
+    console.log('String interpo', `/skills/${req.params.id}`)
+    res.redirect(`/skills/${req.body.skillName}`);
 }
