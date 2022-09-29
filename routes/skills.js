@@ -11,5 +11,7 @@ router.get('/', skillsCtrl.index);
 router.get('/new', skillsCtrl.new);
 // GET /skills/:id
 router.get('/:id', skillsCtrl.show);
+// POST /new
+router.post('/', skillsCtrl.create);
 
 module.exports = router;
