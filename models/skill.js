@@ -19,5 +19,11 @@ function getAll () {
 
 function getOne(id) {
     // using arry.find to find object
-    return skills.find(skills => skills.skillName === id);
+    return skills.find(skill => skill.skillName === id);
+}
+
+function create(skill) {
+    // set project
+    skill.project = 'N/A'
+    skills.push(skill);
 }
