@@ -33,6 +33,8 @@ function newSkill(req, res) {
 
 // create new post
 function create(req,res) {
+    // pass input
     Skills.create(req.body);
+    // redirect back to index view
     res.redirect('/skills');
 }
