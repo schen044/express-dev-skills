@@ -60,6 +60,5 @@ function edit(req, res) {
 // edit skill
 function update(req, res) {
     Skill.updateOne(req.params.id, req.body.skillName);
-    console.log('String interpo', `/skills/${req.params.id}`)
-    res.redirect(`/skills/${req.body.skillName}`);
+    res.redirect(`/skills/${req.params.id}`);
 }

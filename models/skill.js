@@ -1,9 +1,9 @@
 // skills array
 const skills = [
-    {skillName: 'HTML', project: 'Minesweeper'},
-    {skillName: 'CSS', project: 'Minesweeper'},
-    {skillName: 'Javascript', project: 'Minesweeper'},
-    {skillName: 'Express', project: 'Express Lab'}
+    {id: 111, skillName: 'HTML', project: 'Minesweeper'},
+    {id: 222, skillName: 'CSS', project: 'Minesweeper'},
+    {id: 333, skillName: 'Javascript', project: 'Minesweeper'},
+    {id: 444, skillName: 'Express', project: 'Express Lab'}
 ];
 
 // exports
@@ -21,17 +21,21 @@ function getAll () {
 };
 
 function getOne(id) {
-    // using arry.find to find object
-    return skills.find(skill => skill.skillName === id);
+    id = parseInt(id);
+    // using array.find to find object
+    return skills.find(skill => skill.id === id);
 }
 
 function create(skill) {
+    // create id
+    skill.id = Date.now() % 1000;
     // set project
     skill.project = 'N/A'
     skills.push(skill);
 }
 
 function deleteOne(id) {
+    id = parseInt(id);
     // find index of skill object for deletion
     const idx = skills.findIndex(skill => skill.skillName === id);
     // remove at index
