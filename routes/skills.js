@@ -10,10 +10,10 @@ const skillsCtrl = require('../controllers/skills');
 router.get('/', skillsCtrl.index);
 // GET /new
 router.get('/new', skillsCtrl.new);
-// GET /skills/:id
-router.get('/:id', skillsCtrl.show);
 // POST /new
 router.post('/', skillsCtrl.create);
+// GET /skills/:id
+router.get('/:id', skillsCtrl.show);
 // DELETE /skills/:id
 router.delete('/:id', skillsCtrl.delete);
 // GET /skills/:id/edit
