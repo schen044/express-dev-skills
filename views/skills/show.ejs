@@ -1,34 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-    <title><%= title %></title>
-</head>
-<body>
+<%- include('../partials/header') %>
     <h1><%= skill.skillName %></h1>
     <% if(skill.project === 'Minesweeper') { %>
         <a href="https://github.com/schen044/minesweeper">
             <%= skill.project %>
             github link
         </a>
-    <% }; %>
+        <% }; %>
     <% if(skill.project === 'Express Lab') { %>
         <a href="https://github.com/schen044/express-dev-skills">
             <%= skill.project %>
             github link
         </a>
     <% }; %>
-    <% if(skill.project === 'N/A') { %>
-        No example project
+    <% if(skill.project !== 'Minesweeper' && skill.project!== 'Express Lab') { %>
+        No project linked
     <% }; %>
+    <br>
     <br>
     <a href="/skills/<%= skill.id %>/edit">Edit Skills</a>
     <form action="/skills/<%= skill.id %>?_method=DELETE"
         class="delete-form" method="POST">
         <button type="submit">X</button>
     </form>
+    <br>
+    <br>
+    <a href="/skills">Back to Skills Index</a>
 </body>
 </html>
