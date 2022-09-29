@@ -4,7 +4,7 @@ const skills = [
     {id: 222, skillName: 'CSS', project: 'Minesweeper'},
     {id: 333, skillName: 'Javascript', project: 'Minesweeper'},
     {id: 444, skillName: 'Express', project: 'Express Lab'}
-];
+]
 
 // exports
 module.exports = {
@@ -13,12 +13,12 @@ module.exports = {
     create,
     deleteOne,
     updateOne
-};
+}
 
 // functions
 function getAll () {
     return skills;
-};
+}
 
 function getOne(id) {
     id = parseInt(id);
@@ -29,8 +29,6 @@ function getOne(id) {
 function create(skill) {
     // create id
     skill.id = Date.now() % 1000;
-    // set project
-    skill.project = 'N/A'
     skills.push(skill);
 }
 
@@ -42,9 +40,10 @@ function deleteOne(id) {
     skills.splice(idx, 1);
 }
 
-function updateOne(id, skill) {
+function updateOne(id, data) {
     // get that one todo
     skillToUpdate = getOne(id);
     // update todo property to incoming data
-    skillToUpdate.skillName = skill;
+    skillToUpdate.skillName = data.skillName;
+    skillToUpdate.project = data.project;
 }
