@@ -10,7 +10,8 @@ const skills = [
 module.exports = {
     getAll,
     getOne,
-    create
+    create,
+    deleteOne
 };
 
 // functions
@@ -27,4 +28,11 @@ function create(skill) {
     // set project
     skill.project = 'N/A'
     skills.push(skill);
+}
+
+function deleteOne(id) {
+    // find index of skill object for deletion
+    const idx = skills.findIndex(skill => skill.skillName === id);
+    // remove at index
+    skills.splice(idx,1);
 }
