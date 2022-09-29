@@ -7,7 +7,8 @@ module.exports = {
     show,
     new: newSkill,
     create,
-    delete: deleteSkill
+    delete: deleteSkill,
+    edit
 }
 
 // functions
@@ -45,4 +46,9 @@ function deleteSkill(req, res) {
     Skill.deleteOne(req.params.id);
     // redirect to index
     res.redirect('/skills');
+}
+
+// edit post
+function edit(req, res) {
+    res.render('skills/edit');
 }
