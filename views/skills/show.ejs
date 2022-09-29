@@ -24,6 +24,8 @@
     <% if(skills.project === 'N/A') { %>
         No example project
     <% }; %>
+    <br>
+    <a href="/skills/edit">Edit Skills</a>
     <form action="/skills/<%= skills.skillName %>?_method=DELETE"
         class="delete-form" method="POST">
         <button type="submit">X</button>
