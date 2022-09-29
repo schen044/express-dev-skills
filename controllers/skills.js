@@ -4,10 +4,11 @@ const Skills = require('../models/skill');
 // exports
 module.exports = {
     index,
-    show
+    show,
+    new: newSkill
 }
 
-// function
+// functions
 function index(req, res) {
     res.render('skills/index', {
         skills: Skills.getAll(),
@@ -20,4 +21,9 @@ function show(req, res) {
         skills: Skills.getOne(req.params.id),
         title: 'Individual Skills List'
     });
+}
+
+// display new view
+function newSkill(req, res) {
+    res.render('skills/new');
 }
