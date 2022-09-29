@@ -25,5 +25,7 @@ function show(req, res) {
 
 // display new view
 function newSkill(req, res) {
-    res.render('skills/new');
+    res.render('skills/new', {
+        title: 'Add A Skill'
+    });
 }
