@@ -1,4 +1,5 @@
 var express = require('express');
+const skills = require('../controllers/skills');
 var router = express.Router();
 // controller to export skills CRUD functions
 const skillsCtrl = require('../controllers/skills');
@@ -15,5 +16,6 @@ router.get('/:id', skillsCtrl.show);
 router.post('/', skillsCtrl.create);
 // DELETE /skills/:id
 router.delete('/:id', skillsCtrl.delete);
-
+// GET /skills/:id/edit
+router.edit('/:id/edit', skillsCtrl.edit);
 module.exports = router;
