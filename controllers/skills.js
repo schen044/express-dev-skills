@@ -1,25 +1,26 @@
 // requires
-const Skills = require('../models/skill');
+const Skill = require('../models/skill');
 
 // exports
 module.exports = {
     index,
     show,
     new: newSkill,
-    create
+    create,
+    delete: deleteSkill
 }
 
 // functions
 function index(req, res) {
     res.render('skills/index', {
-        skills: Skills.getAll(),
+        skills: Skill.getAll(),
         title: 'Skills List'
     });
 }
 
 function show(req, res) {
     res.render('skills/show', {
-        skills: Skills.getOne(req.params.id),
+        skills: Skill.getOne(req.params.id),
         title: 'Individual Skills List'
     });
 }
@@ -32,9 +33,16 @@ function newSkill(req, res) {
 }
 
 // create new post
-function create(req,res) {
+function create(req, res) {
     // pass input
-    Skills.create(req.body);
+    Skill.create(req.body);
     // redirect back to index view
+    res.redirect('/skills');
+}
+
+// delete post
+function deleteSkill(req, res) {
+    Skill.deleteOne(req.params.id);
+    // redirect to index
     res.redirect('/skills');
 }
